@@ -27,8 +27,7 @@ exports.createProduct = async (req, res) => {
 }
 
 exports.getProducts = async (req, res) => {
-    //if you want to received products according to specific users and you have to pass the parameter on find({ProductsCreatedBy:userName}, "name price") the it will show products according to user who actually created the products
-    // const userName= req.headers.name
+
     try {
         const products = await ProductModel.find({}, "name price");
         res.json(products);
